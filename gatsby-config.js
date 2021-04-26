@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Gatsby Landing Page`,
+    description: `Gatsby landing page to show 1000+ place to visit in egypt and provide info about each place individually and his builder/owner`,
     author: `@gatsbyjs`,
   },
   plugins: [
