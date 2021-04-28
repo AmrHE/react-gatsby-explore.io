@@ -2,25 +2,25 @@
   {
     "img": "../assets/images/travel-7.jpg",
     "alt": "Sphinx & The Great Pyramids of Giza",
-    "name": "The Great Pyramids Of Giza",
+    "name": "The Great Pyramids, Giza",
     "button": "Veiw Destination"
   },
   {
     "img": "../assets/images/travel-11.jpg",
     "alt": "The Citadel of Saladin",
-    "name": "Cairo Citadel Of Salahdin",
+    "name": "Citadel Of Salah Ad-Din, Cairo",
     "button": "Veiw Destination"
   },
   {
     "img": "../assets/images/travel-10.jpg",
     "alt": "Valley of the kings",
-    "name": "Valley Of The Kings Tombs",
+    "name": "The Valley Of The Kings, Luxor",
     "button": "Veiw Destination"
   },
   {
     "img": "../assets/images/travel-12.jpeg",
     "alt": "Baron Empain Palace",
-    "name": "Baron Empain Palace",
+    "name": "Baron Empain Palace, Cairo",
     "button": "Veiw Destination"
   }
 ]
