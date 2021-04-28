@@ -1,12 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { Button } from './Button';
-import { ImLocation } from 'react-icons/im'
+import React from "react"
+import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { Button } from "./Button"
+import { ImLocation } from "react-icons/im"
 
-
-const Trips = ({heading}) => {
+const Trips = ({ heading }) => {
   const data = useStaticQuery(graphql`
     query TripsQurey {
       allTripsJson {
@@ -25,33 +24,31 @@ const Trips = ({heading}) => {
           }
         }
       }
-    }  
+    }
   `)
 
-  
   function getTrips(data) {
-    const tripsArray = [];
+    const tripsArray = []
     data.allTripsJson.edges.forEach((item, index) => {
       tripsArray.push(
         <ProductCard key={index}>
-          <ProdcutImg 
-            src={item.node.img.childImageSharp.fluid.src}
+          <ProdcutImg
             alt={item.node.alt}
-            fluid={item.node.img.childImageSharp.fluid} 
+            fluid={item.node.img.childImageSharp.fluid}
           />
           <ProductInfo>
             <TextWrap>
               <ImLocation />
               <ProductTitle>{item.node.name}</ProductTitle>
             </TextWrap>
-            <Button 
-              to="/trips" 
-              primary="true" 
-              round="true" 
+            <Button
+              to="/trips"
+              primary="true"
+              round="true"
               css={`
-                position:absolute; 
-                top: 420px; 
-                font-size: 14px; 
+                position: absolute;
+                top: 420px;
+                font-size: 14px;
               `}
             >
               {item.node.button}
@@ -62,8 +59,7 @@ const Trips = ({heading}) => {
     })
     return tripsArray
   }
- 
-  
+
   return (
     <ProductsContainer>
       <ProductsHeading>{heading}</ProductsHeading>
@@ -72,12 +68,12 @@ const Trips = ({heading}) => {
   )
 }
 
-export default Trips;
+export default Trips
 
 const ProductsContainer = styled.div`
   min-height: 100vh;
-  padding: 5rem calc((100vw - 1300px) /2);
-  color: #FFF;
+  padding: 5rem calc((100vw - 1300px) / 2);
+  color: #fff;
 `
 
 const ProductsHeading = styled.div`
@@ -93,8 +89,9 @@ const ProductWrapper = styled.div`
   grid-gap: 10px;
   justify-items: center;
   padding: 0 2rem;
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: 1fr, 1fr;
+
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: 1fr 1fr;
   }
 
   @media screen and (max-width: 868px) {
@@ -116,15 +113,15 @@ const ProdcutImg = styled(Img)`
   max-width: 100%;
   position: relative;
   border-radius: 10px;
-  filter: brightness(70%);
-  transition: 0.4s cubic-bezier(0..75, 0.82, 0.165, 1);
+  filter: brightness(60%);
+  transition: 0.4s cubic-bezier(0.75, 0.82, 0.165, 1);
 
   &:hover {
     filter: brightness(100%);
   }
 `
 
-const ProductInfo= styled.div`
+const ProductInfo = styled.div`
   display: flex:
   flex-direction: column:
   align-items: flex-start;
@@ -143,10 +140,9 @@ const TextWrap = styled.div`
 `
 
 const ProductTitle = styled.div`
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
   margin-left: 0.5rem;
-
 `
 
 // const ProductWrapper = styled.div``
