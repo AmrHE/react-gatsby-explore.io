@@ -8,9 +8,7 @@ import { menuData } from "../data/MenuData"
 const Dropdown = ({ toggle, isOpen }) => {
   return (
     <DropdownContainer isOpen={isOpen} onClick={toggle}>
-      <Icon>
-        {" "}
-        onClick={toggle}
+      <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
       <DropdownWrapper>
