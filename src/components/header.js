@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
@@ -6,8 +6,16 @@ import { menuData } from "../data/MenuData"
 import { Button } from "./Button"
 
 const Header = ({ toggle }) => {
+  const [navbar, setNavbar] = useState(false)
+
+  useEffect(() => {
+    if (window.location.pathname) {
+      setNavbar(window.location.pathname)
+    }
+  }, [])
+
   return (
-    <Nav>
+    <Nav navbar={navbar}>
       <NavLink to="/">ExploreEgypt.io</NavLink>
       <Bars onClick={toggle} />
       <NavMenu>
@@ -29,7 +37,7 @@ const Header = ({ toggle }) => {
 export default Header
 
 const Nav = styled.nav`
-  background: transparent;
+  background: ${({ navbar }) => (navbar !== "/" ? "#141414" : "transparent")};
   height: 80px;
   display: flex;
   justify-content: space-between;
