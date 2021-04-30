@@ -1,16 +1,30 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import EmailBg from "../assets/images/emails.jpg"
 import { Button } from "./Button"
+import Aos from "aos"
+import "aos/dist/aos.css"
 
 const Email = () => {
+  useEffect(() => {
+    Aos.init({})
+  }, [])
+
   return (
     <EmailContainer>
       <EmailContent>
-        <h1>Get Access to Exclusive Offers</h1>
-        <p>Sign up for our newsletter below to get $100 off your first trip!</p>
+        <h1 data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+          Get Access to Exclusive Offers
+        </h1>
+        <p data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
+          Sign up for our newsletter below to get $100 off your first trip!
+        </p>
         <form action="#">
-          <FormWrap>
+          <FormWrap
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+          >
             <label htmlFor="email">
               <input type="email" placeholder="Enter your email" id="emial" />
             </label>
