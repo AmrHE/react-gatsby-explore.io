@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "gatsby";
-import styled from "styled-components";
-import { FaBars } from "react-icons/fa";
-import { menuData } from '../data/MenuData';
-import { Button } from './Button';
+import React from "react"
+import { Link } from "gatsby"
+import styled from "styled-components"
+import { FaBars } from "react-icons/fa"
+import { menuData } from "../data/MenuData"
+import { Button } from "./Button"
 
-const Header = () => {
+const Header = ({ toggle }) => {
   return (
     <Nav>
       <NavLink to="/">ExploreEgypt.io</NavLink>
-      <Bars/>
+      <Bars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, index) => (
           <NavLink key={index} to={item.link}>
@@ -18,9 +18,9 @@ const Header = () => {
         ))}
       </NavMenu>
       <NavBtn>
-      <Button round="true" primary="true" to="/trips" >
-        Book a Flight
-      </Button>
+        <Button round="true" primary="true" to="/trips">
+          Book a Flight
+        </Button>
       </NavBtn>
     </Nav>
   )
@@ -28,19 +28,18 @@ const Header = () => {
 
 export default Header
 
-
 const Nav = styled.nav`
   background: transparent;
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1300px) /2);
+  padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: relative;
 `
 
 const NavLink = styled(Link)`
-  color: #FFF;
+  color: #fff;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -51,8 +50,8 @@ const NavLink = styled(Link)`
 
 const Bars = styled(FaBars)`
   display: none;
-  color: #FFF;
-  
+  color: #fff;
+
   @media screen and (max-width: 786px) {
     display: block;
     position: absolute;
@@ -74,14 +73,12 @@ const NavMenu = styled.div`
   }
 `
 
-
 const NavBtn = styled.div`
   display: flex;
   align-items: center;
   margin-right: 24px;
 
-@media screen and (max-width: 786px) {
+  @media screen and (max-width: 786px) {
     display: none;
   }
-
 `
