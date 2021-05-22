@@ -133,8 +133,8 @@ const ProdcutImg = styled(Img)`
 `
 
 const ProductInfo = styled.div`
-  display: flex:
-  flex-direction: column:
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0 2rem;
 
