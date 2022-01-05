@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/react-gatsby-explore.io",
   siteMetadata: {
     title: `Gatsby Landing Page`,
     description: `Gatsby landing page to show 1000+ place to visit in egypt and provide info about each place individually and his builder/owner`,
